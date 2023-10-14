@@ -55,7 +55,7 @@ function GraphUI({ graphData, current, total }) {
 
   return (
     <>
-      <div className="p-7 w-full text-black flex flex-col min-h-screen bg-white">
+      <div className="p-4 w-full text-black flex flex-col min-h-screen bg-white">
         <div className="flex p-2  font-bold items-center border-b-4 border-b-blue-400 justify-between text-right w-full ">
           <img src={logoAI} width="150px" alt="heroIcon" />
           123 Main Street, Dover, NH 03820-4667
