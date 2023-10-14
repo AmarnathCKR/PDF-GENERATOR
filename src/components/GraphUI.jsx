@@ -172,7 +172,7 @@ function GraphUI({ graphData, current, total }) {
             </div>
           </div>
         </div>
-        <div className="w-full p-8 flex justify-center">
+        <div className="w-full p-3 flex justify-center">
           {dataSet && <Line data={dataSet} options={options} />}
         </div>
         <div className="mt-auto flex justify-between border-t-4 border-b-blue-400 pt-2">
