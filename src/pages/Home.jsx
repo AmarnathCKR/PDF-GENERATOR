@@ -1,20 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { fetchData } from "../api/api";
 import GraphUI from "../components/GraphUI";
-import ReactToPrint, { useReactToPrint } from "react-to-print";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+import ReactToPrint from "react-to-print";
 
 /* eslint-disable react/prop-types */
 function Home({ loading }) {
   const [graphData, setGraph] = useState();
-  const [hide, setHide] = useState(true);
   const printableRef = useRef(null);
 
   useEffect(() => {
     loading(true);
     fetchData().then(async (response) => {
-      
       const result = Object.keys(response.data.data[0])
         .filter((key) => key !== "data_year")
         .map((key) => ({
@@ -33,9 +29,9 @@ function Home({ loading }) {
   return (
     <>
       <div className="dark:bg-black bg-white h-screen flex justify-center items-center text-black dark:text-white">
-        
-          <ReactToPrint
-            trigger={() => (
+        <ReactToPrint
+          trigger={() => {
+            return (
               <button className="flex border-4 rounded px-6 py-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -53,15 +49,16 @@ function Home({ loading }) {
                 </svg>
                 Print
               </button>
-            )}
-            content={() => printableRef.current}
-            onBeforeGetContent={()=>setHide(false)}
-            onAfterPrint={()=>setHide(true)}
-          />
-        
+            );
+          }}
+          content={() => printableRef.current}
+        />
       </div>
       <div
-        style={{ visibility: "hidden", height: "0px", display: hide?"none" : "block" }}
+        style={{
+          visibility: "hidden",
+          height: "0px",
+        }}
         className="flex flex-col h-0 justify-center align-middle items-center"
       >
         <div ref={printableRef}>
