@@ -60,7 +60,7 @@ function GraphUI({ graphData, current, total }) {
           <img src={logoAI} width="150px" alt="heroIcon" />
           123 Main Street, Dover, NH 03820-4667
         </div>
-        <div className="w-full px-10 flex flex-col items-center justify-center">
+        <div className="w-full px-6 flex flex-col items-center justify-center">
           <div className="flex flex-col">
             <div className="overflow-x-auto my-5 sm:-mx-6 lg:-mx-8">
               <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
@@ -172,7 +172,7 @@ function GraphUI({ graphData, current, total }) {
             </div>
           </div>
         </div>
-        <div className="w-full p-3 flex justify-center">
+        <div className="w-full flex justify-center">
           {dataSet && <Line data={dataSet} options={options} />}
         </div>
         <div className="mt-auto flex justify-between border-t-4 border-b-blue-400 pt-2">
