@@ -61,7 +61,7 @@ function Home({ loading }) {
         }}
         className="flex flex-col w-full h-0 justify-center align-middle items-center"
       >
-        <div ref={printableRef}>
+        <div  ref={printableRef}>
           {graphData &&
             graphData.map((d, index) => (
               <GraphUI
