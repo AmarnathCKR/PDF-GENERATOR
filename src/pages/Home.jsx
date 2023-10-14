@@ -54,7 +54,7 @@ function Home({ loading }) {
           />
         </button>
       </div>
-      <div className="flex flex-col justify-center align-middle items-center">
+      <div style={{visibility : "hidden" , height : "0px"}} className="flex flex-col h-0 justify-center align-middle items-center">
         <div ref={printableRef}>
           {graphData &&
             graphData.map((d, index) => (

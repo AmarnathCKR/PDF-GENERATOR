@@ -32,7 +32,7 @@ function GraphUI({ graphData, current, total }) {
         label: "Arrests",
         data: keys.map((key) => graphData[key]),
         fill: false,
-        borderColor: "red",
+        borderColor: "blue",
       },
     ],
   };
