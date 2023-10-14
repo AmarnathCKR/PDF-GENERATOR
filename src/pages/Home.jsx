@@ -57,9 +57,9 @@ function Home({ loading }) {
       <div
         style={{
           visibility: "hidden",
-          height: "0px",
+          width : "full"
         }}
-        className="flex flex-col h-0 justify-center align-middle items-center"
+        className="flex flex-col w-full h-0 justify-center align-middle items-center"
       >
         <div ref={printableRef}>
           {graphData &&
